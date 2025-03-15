@@ -134,12 +134,12 @@ async def K(c, t, C, h, m, start_time):
         eta = time.strftime('%M:%S', time.gmtime((t - c) / (speed * 1024 * 
             1024))) if speed > 0 else '00:00'
         await C.edit_message_text(h, m,
-            f"""__**Pyro Handler...**__\n\n
-{bar}
+            f"""__**Pyro Handler...**__\n
+{bar}\n
 ⚡**__Completed__**: {c_mb:.2f} MB / {t_mb:.2f} MB
 📊 **__Done__**: {p:.2f}%
 🚀 **__Speed__**: {speed:.2f} MB/s
-⏳ **__ETA__**: {eta}\n\n
+⏳ **__ETA__**: {eta}\n
 **__Powered by Team SPY__**"""
             )
         if p >= 100:
