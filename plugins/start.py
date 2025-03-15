@@ -12,7 +12,7 @@ from config import LOG_GROUP, OWNER_ID
 async def subscribe(app, message):
     if FORCE_SUB:
         try:
-          user = await app.get_chat_member(LOG_GROUP, message.from_user.id)
+          user = await app.get_chat_member(FORCE_SUB, message.from_user.id)
           print(user)
           if str(user.status) == "ChatMemberStatus.BANNED":
               await message.reply_text("You are Banned. Contact -- Team SPY")
