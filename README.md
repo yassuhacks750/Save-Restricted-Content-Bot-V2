@@ -40,22 +40,17 @@ see our live bot kn telegram to check the features [Advance Content Saver Bot](h
 - **`batch`**: 🫠 Extract in bulk.
 - **`login`**: 🔑 Get into the bot.
 - **`logout`**: 🚪 Get out of the bot.
-- **`token`**: 🎲 Get 3 hours of free access.
 - **`adl`**: 👻 Download audio from 30+ sites.
 - **`dl`**: 💀 Download videos from 30+ sites.
 - **`transfer`**: 💘 Gift premium to others.
-- **`myplan`**: ⌛ Get your plan details.
+- **`status`**: ⌛ Get your plan details.
 - **`add`**: ➕ Add user to premium.
 - **`rem`**: ➖ Remove user from premium.
 - **`session`**: 🧵 Generate Pyrogramv2 session.
 - **`settings`**: ⚙️ Personalize settings.
-- **`stats`**: 📊 Get stats of the bot.
 - **`plan`**: 🗓️ Check our premium plans.
 - **`terms`**: 🥺 Terms and conditions.
-- **`speedtest`**: 🚅 Check the server speed.
 - **`get`**: 🗄️ Get all user IDs.
-- **`lock`**: 🔒 Protect channel from extraction.
-- **`gcast`**: ⚡ Broadcast message to bot users.
 - **`help`**: ❓ Help if you're new.
 - **`cancel`**: 🚫 Cancel batch process.
 
@@ -108,13 +103,13 @@ To run the bot, you'll need to configure a few sensitive variables. Here's how t
    git clone your_repo_link
    cd your_repo_name
    pip3 install -r requirements.txt
-   python3 -m devgagan
+   python3 main.py
    ```
 
 - To run the bot in the background:
   ```bash
   screen -S gagan
-  python3 -m devgagan
+  python3 main.py
   ```
   - Detach: `Ctrl + A`, then `Ctrl + D`
   - To stop: `screen -r gagan` and `screen -S gagan -X quit`
