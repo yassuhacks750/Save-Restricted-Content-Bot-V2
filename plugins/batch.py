@@ -270,15 +270,17 @@ async def V(C, U, m, d, link_type, u):
             return 'Sent.'
     except Exception as e:
         return f'Error: {e}'
+ 
 async def get_user_client(user_id):
     """Get or create user client"""
     user_data = await get_user_data(user_id)
+    if user_data is None:
+        return None  # or handle the case accordingly
     session_string = user_data.get('session_string')
     ss_name = f'{user_id}_bot'
     if session_string:
         try:
-            gg = C(ss_name, api_id=A, api_hash=H, session_string=session_string
-                )
+            gg = C(ss_name, api_id=A, api_hash=H, session_string=session_string)
             await gg.start()
             await update_dialogs(gg)
             return gg
@@ -294,7 +296,7 @@ async def get_user_client(user_id):
     if Y:
         await update_dialogs(Y)
     return Y
-
+    
 async def prompt_userbot_login(user_id):
     """Prompt user to add session if default userbot not available"""
     chat = await X.get_chat(user_id)
