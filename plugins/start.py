@@ -231,4 +231,19 @@ async def see_terms(client, callback_query):
     )
     await callback_query.message.edit_text(terms_text, reply_markup=buttons)
  
- 
+ @app.on_message(filters.command("start") & filters.private)
+async def start(client, message):
+    join = await subscribe(client, message)
+    if join == 1:
+        return
+
+    await message.reply_text(
+        "**👋 Welcome to Save Restricted Bot!**\n\n"
+        "I can help you extract videos and media from various platforms.\n\n"
+        "Use /help to see full command list.\n\n"
+        "**Developed by @kingofpatal 👑**",
+        reply_markup=InlineKeyboardMarkup([
+            [InlineKeyboardButton("📋 Help", callback_data="help_next_0")],
+            [InlineKeyboardButton("📢 Channel", url="https://t.me/quiz_zone_new")],
+        ])
+    )
